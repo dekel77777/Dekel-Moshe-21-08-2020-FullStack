@@ -1,0 +1,17 @@
+<a *ngIf="currentConditionsLight"
+class = "list-group-item clearfix">
+  <div class="float-left">
+    <h4 class="list-group-item-text">{{currentConditionsLight.localizedName}}</h4>
+    <h6 class="list-group-item-heading"> {{currentConditionsLight.temperatureInCelsius + '° ' + currentConditionsLight.weatherText}}</h6>
+  </div>
+  <div class="float-right">
+    <img
+    src="https://image.flaticon.com/icons/svg/2037/2037517.svg"
+    alt="add"
+    class="img-responsive"
+    style="max-height: 50px;">
+    <button *ngIf = "isAddToFavorites" class="btn btn-success" (click) = onAddToFavorites(currentConditionsLight)>Add to favorites</button>
+    <button *ngIf = "!isAddToFavorites" class="btn btn-danger" (click) = onRemoveFromFavorites(currentConditionsLight)>Remove from favorites</button>
+  </div>
+</a>
+
